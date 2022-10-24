@@ -1,7 +1,6 @@
 package com.studyhot.wiki.job;
 
-import com.jiawa.wiki.service.EbookSnapshotService;
-import com.jiawa.wiki.util.SnowFlake;
+import com.studyhot.wiki.service.EbookSnapshotService;
 import com.studyhot.wiki.util.SnowFlake;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +25,7 @@ public class EbookSnapshotJob {
      * 自定义cron表达式跑批
      * 只有等上一次执行完成，下一次才会在下一个时间点执行，错过就错过
      */
-    @Scheduled(cron = "0/5* * * * ?")
+    @Scheduled(cron = "0 0/1 * * * ?")
     public void doSnapshot() {
         // 增加日志流水号
         MDC.put("LOG_ID", String.valueOf(snowFlake.nextId()));
