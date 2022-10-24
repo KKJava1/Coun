@@ -1,0 +1,16 @@
+GET http://localhost:8880/hello
+Accept: application/json
+
+###
+POST http://localhost:8880/hello/post
+Content-Type: application/x-www-form-urlencoded
+
+name=Study Hot23
+
+###
+
+###
+GET http://localhost:8880/test/list
+Accept: application/json
+
+###

@@ -1,0 +1,25 @@
+###
+GET http://localhost:8880/ebook/list?name=Spring
+Accept: application/json
+
+###
+###
+GET http://localhost:8880/ebook/list?page=1&size=1001
+Accept: application/json
+
+
+###
+
+POST http://localhost:8880/ebook/save
+Content-Type: application/json
+
+{
+
+}
+
+###
+
+GET http://127.0.0.1:8880/ebook/list?page=1&size=1000&categoryId2=101
+Accept: application/json
+
+###
