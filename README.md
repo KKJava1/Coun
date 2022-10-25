@@ -1,10 +1,10 @@
 # wiki
 
 #### 介绍
-wiki知识库系统项目1
+wiki 电子书知识库系统项目
 
 #### 软件架构
-软件架构说明
+项目采用了前后端分离技术；后端采用 springBoot 基本框架，数据库连接池技 术，Redis+token权限验证；前端使用 vue3+vueCil 开发模式；使用了 axio+json，vuex， Ant Design Vue,router来实现页面功能。
 
 
 #### 安装教程
