@@ -27,6 +27,7 @@ ps：请先运行后端项目，再启动前端项目
 完善的XSS防范及脚本过滤，彻底杜绝XSS攻击
 完善的代码生成机制，可在线生成domain、xml、dao、service、vue、sql代码，减少70%以上的开发任务
 引入quartz定时任务，可动态完成书本的点赞，阅读数，文档功能
+利用websocket实时更新数据
 新增AOP注解实现日志管理。
 代码遵循阿里巴巴开发规范，利于开发者学习。
 
@@ -48,5 +49,8 @@ ps：请先运行后端项目，再启动前端项目
 
 #### 用户如果觉得书本好，可以给书本进行点赞
 ![image](https://user-images.githubusercontent.com/116629035/197734368-2f731020-73fc-4602-ba94-b4857d394c5d.png)
+
+#### 可以进行管理页面，展示到封面上
+![image](https://user-images.githubusercontent.com/116629035/197734744-c6657131-d142-4f79-8ba4-8d9d07bc6f52.png)
 
 
