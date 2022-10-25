@@ -6,20 +6,20 @@ wiki 电子书知识库系统项目
 
 ## 技术栈
 #### 后端技术
-SpringBoot：简化新Spring应用的初始搭建以及开发过程
-MyBatis：持久层框架
-Redis：内存缓存
-HTTPClient: Http协议客户端
-Nginx：负载均衡
-Lombok
-Mysql：关系型数据库
-MongoDB：面向文档的NoSQL数据库
-#### 前端技术
-Vue.js：web 界面的渐进式框架
-Node.js： JavaScript 运行环境
-Axios：Axios 是一个基于 promise 的 HTTP 库
-Ant Design Vue:进行页面布局
-Webpack：打包工具
+SpringBoot：简化新Spring应用的初始搭建以及开发过程  
+MyBatis：持久层框架  
+Redis：内存缓存  
+HTTPClient: Http协议客户端  
+Nginx：负载均衡  
+Lombok  
+Mysql：关系型数据库  
+MongoDB：面向文档的NoSQL数据库  
+#### 前端技术  
+Vue.js：web 界面的渐进式框架  
+Node.js： JavaScript 运行环境  
+Axios：Axios 是一个基于 promise 的 HTTP 库  
+Ant Design Vue:进行页面布局  
+Webpack：打包工具  
 
 
 ## 软件架构
