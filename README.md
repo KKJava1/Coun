@@ -32,7 +32,6 @@ ps：请先运行后端项目，再启动前端项目
 
 
 
-
 #### 技术选型
 核心框架：Spring Boot 2.4.0
 持久层框架：MyBatis 3.5
@@ -40,4 +39,5 @@ ps：请先运行后端项目，再启动前端项目
 日志管理：Logback
 页面交互：Vue3.x
 
-
+#### 项目截图
+![image](https://user-images.githubusercontent.com/116629035/197731503-be24179b-c997-4916-86d9-fdb87b1727a3.png)
