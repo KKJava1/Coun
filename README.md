@@ -2,11 +2,25 @@
 
 ## 介绍
 wiki 电子书知识库系统项目
-Springboot+vue3
-项目采用了前后端分离技术；后端采用 springBoot 基本框架，数据库连接池技
-术，Redis+token权限验证；前端使用 vue3+vueCil 开发模式；使用了 axio+json，vuex，
-Ant Design Vue,router来实现页面功能。
-ps：请先运行后端项目，再启动前端项目
+#### Springboot+vue3
+
+## 技术栈
+#### 后端技术
+SpringBoot：简化新Spring应用的初始搭建以及开发过程
+MyBatis：持久层框架
+Redis：内存缓存
+HTTPClient: Http协议客户端
+Nginx：负载均衡
+Lombok
+Mysql：关系型数据库
+MongoDB：面向文档的NoSQL数据库
+#### 前端技术
+Vue.js：web 界面的渐进式框架
+Node.js： JavaScript 运行环境
+Axios：Axios 是一个基于 promise 的 HTTP 库
+Ant Design Vue:进行页面布局
+Webpack：打包工具
+
 
 ## 软件架构
 基于 SSM 开发模式，模拟实现电子书库系统，利用，Interceptor过滤器技术进
@@ -42,7 +56,6 @@ ps：请先运行后端项目，再启动前端项目
 
 ## 项目截图
 ![image](https://user-images.githubusercontent.com/116629035/197731503-be24179b-c997-4916-86d9-fdb87b1727a3.png)
-
 
 #### 登录后可以进行电子书管理 ，还可以进行富文本编辑
 ![image](https://user-images.githubusercontent.com/116629035/197733823-7874de7a-80f8-4b2c-a5b9-157691c76608.png)
