@@ -18,17 +18,9 @@ Ant Design Vue,router来实现页面功能。
 
 
 
-开发环境
-开发工具	说明
-IDEA	Java开发工具IDE
-WebStrom或者VS Code	Vue开发工具IDE
-Navicat	MySQL远程连接工具
-Another Redis Desktop Manager	Redis远程连接工具
-FinalShell	Linux远程连接工具
-HBuilder X	编译微信小程序工具
-开发环境	版本
-JDK	1.8
-MySQL	8.0.29
-Redis	6.0.5
-Maven	3.8
-NodeJs	14.x.x
+技术选型
+核心框架：Spring Boot 2.4.0
+持久层框架：MyBatis 3.5
+定时器：SpringJob
+日志管理：Logback
+页面交互：Vue3.x
