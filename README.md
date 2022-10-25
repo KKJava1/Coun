@@ -16,12 +16,20 @@ Ant Design Vue,router来实现页面功能。
 交互，管理者也能通过该系统了解各个书本的情况，通过 Echarts图表显示分析后的数据，让
 读者清晰的知道30天的用户访问曲线图。
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+开发环境
+开发工具	说明
+IDEA	Java开发工具IDE
+WebStrom或者VS Code	Vue开发工具IDE
+Navicat	MySQL远程连接工具
+Another Redis Desktop Manager	Redis远程连接工具
+FinalShell	Linux远程连接工具
+HBuilder X	编译微信小程序工具
+开发环境	版本
+JDK	1.8
+MySQL	8.0.29
+Redis	6.0.5
+Maven	3.8
+NodeJs	14.x.x
 
 #### 使用说明
 
