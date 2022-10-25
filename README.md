@@ -2,7 +2,10 @@
 
 ## 介绍
 wiki 电子书知识库系统项目
-#### Springboot+vue3
+### Springboot+vue3
+项目采用了前后端分离技术；后端采用 springBoot 基本框架，数据库连接池技
+术，Redis+token权限验证；前端使用 vue3+vueCil 开发模式；使用了 axio+json，vuex，
+Ant Design Vue,router来实现页面功能。
 
 ## 技术栈
 #### 后端技术
@@ -32,27 +35,27 @@ Webpack：打包工具
 
 
 ## 项目特点
-友好的代码结构及注释，便于阅读及二次开发
-实现前后端分离，通过token进行数据交互
-支持动态权限修改，采用RBAC模型，前端菜单和后台权限实时更新。
-提供CrudService接口，对增删改查进行封装，代码更简洁
-页面交互使用Vue3.x，极大的提高了开发效率
-完善的部门管理及数据权限，通过注解实现数据权限的控制
-完善的XSS防范及脚本过滤，彻底杜绝XSS攻击
-完善的代码生成机制，可在线生成domain、xml、dao、service、vue、sql代码，减少70%以上的开发任务
-引入quartz定时任务，可动态完成书本的点赞，阅读数，文档功能
-利用websocket实时更新数据
-新增AOP注解实现日志管理。
-代码遵循阿里巴巴开发规范，利于开发者学习。
+友好的代码结构及注释，便于阅读及二次开发  
+实现前后端分离，通过token进行数据交互  
+支持动态权限修改，采用RBAC模型，前端菜单和后台权限实时更新。  
+提供CrudService接口，对增删改查进行封装，代码更简洁  
+页面交互使用Vue3.x，极大的提高了开发效率  
+完善的部门管理及数据权限，通过注解实现数据权限的控制  
+完善的XSS防范及脚本过滤，彻底杜绝XSS攻击  
+完善的代码生成机制，可在线生成domain、xml、dao、service、vue、sql代码，减少70%以上的开发任务  
+引入quartz定时任务，可动态完成书本的点赞，阅读数，文档功能  
+利用websocket实时更新数据  
+新增AOP注解实现日志管理。  
+代码遵循阿里巴巴开发规范，利于开发者学习。  
 
 
 
 ## 技术选型
-核心框架：Spring Boot 2.4.0
-持久层框架：MyBatis 3.5
-定时器：SpringJob
-日志管理：Logback
-页面交互：Vue3.x
+核心框架：Spring Boot 2.4.0  
+持久层框架：MyBatis 3.5  
+定时器：SpringJob  
+日志管理：Logback  
+页面交互：Vue3.x  
 
 ## 项目截图
 ![image](https://user-images.githubusercontent.com/116629035/197731503-be24179b-c997-4916-86d9-fdb87b1727a3.png)
