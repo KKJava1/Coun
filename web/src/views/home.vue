@@ -67,7 +67,7 @@ import { defineComponent, onMounted, ref, reactive, toRef } from 'vue';
 import axios from 'axios';
 import { message } from 'ant-design-vue';
 import {Tool} from "@/util/tool";
-
+import TheWelcome from "@/components/the-welcome.vue";
 // const listData: any = [];
 // for (let i = 0; i < 23; i++) {
 //   listData.push({
@@ -84,6 +84,7 @@ import {Tool} from "@/util/tool";
 export default defineComponent({
   name: 'Home',
   components: {
+    TheWelcome
   },
   setup() {
     const ebooks = ref();

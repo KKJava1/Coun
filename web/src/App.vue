@@ -21,9 +21,9 @@
 <style>
     #components-layout-demo-top-side-2 .logo {
         float: left;
-        width: 120px;
-        height: 31px;
-        margin: 16px 24px 16px 0;
+        width: 100px;
+        height: 40px;
+        margin: 20px 28px 20px 0;
         background: rgba(255, 255, 255, 0.3);
     }
 

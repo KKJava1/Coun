@@ -21,9 +21,6 @@
       <a-menu-item key="/about">
         <router-link to="/about">关于我们</router-link>
       </a-menu-item>
-      <a-menu-item key="/aliyun">
-        <router-link to="/aliyun">阿里云优惠</router-link>
-      </a-menu-item>
       <a-popconfirm
         title="确认退出登录?"
         ok-text="是"
