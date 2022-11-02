@@ -55,7 +55,8 @@ Webpack：打包工具
 页面交互：Vue3.x  
 
 ## 项目截图
-
+####欢迎界面  
+![image](https://user-images.githubusercontent.com/116629035/199486607-e2c9e021-bc6f-4b20-9ad7-59bf6de522cb.png)  
 #### 登录后可以进行电子书管理 ，还可以进行富文本编辑
 ![image](https://user-images.githubusercontent.com/116629035/199486009-8d8b12cd-37f8-4245-a2d2-6509765d80b1.png)
 
@@ -63,6 +64,6 @@ Webpack：打包工具
 ![image](https://user-images.githubusercontent.com/116629035/199486423-8b4b8176-fe0e-4a02-b970-b13ddd197dc5.png)
 
 #### 可以进行管理页面，展示到封面上
-![image](https://user-images.githubusercontent.com/116629035/197734744-c6657131-d142-4f79-8ba4-8d9d07bc6f52.png)
+![image](https://user-images.githubusercontent.com/116629035/199486696-710e1cbb-9310-4d39-8ce3-4f825b4f2d40.png)
 
 
