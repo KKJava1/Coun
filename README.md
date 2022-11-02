@@ -15,7 +15,7 @@ Redis：内存缓存
 HTTPClient: Http协议客户端    
 Lombok  
 Mysql：关系型数据库  
-MongoDB：面向文档的NoSQL数据库  
+阿里云数据库：第三方数据库
 #### 前端技术  
 Vue.js：web 界面的渐进式框架  
 Node.js： JavaScript 运行环境  
@@ -55,7 +55,7 @@ Webpack：打包工具
 页面交互：Vue3.x  
 
 ## 项目截图
-####欢迎界面  
+#### 欢迎界面  
 ![image](https://user-images.githubusercontent.com/116629035/199486607-e2c9e021-bc6f-4b20-9ad7-59bf6de522cb.png)  
 #### 登录后可以进行电子书管理 ，还可以进行富文本编辑
 ![image](https://user-images.githubusercontent.com/116629035/199486009-8d8b12cd-37f8-4245-a2d2-6509765d80b1.png)
