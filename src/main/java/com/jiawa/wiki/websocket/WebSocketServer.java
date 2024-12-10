@@ -1,80 +1,71 @@
 package com.jiawa.wiki.websocket;
 
 import com.alibaba.fastjson.JSONObject;
+import com.kangjunjie.netty.websocket.starter.annotations.OnClose;
+import com.kangjunjie.netty.websocket.starter.annotations.OnOpen;
+import com.kangjunjie.netty.websocket.starter.annotations.PathParam;
+import com.kangjunjie.netty.websocket.starter.annotations.WsServerEndpoint;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import com.kangjunjie.netty.websocket.starter.socket.Session;
 
-import javax.websocket.*;
-import javax.websocket.server.PathParam;
-import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
+@WsServerEndpoint(value = "/ws/{token}")
 @Component
-@ServerEndpoint("/ws/{token}")
+@Slf4j
 public class WebSocketServer {
-    private static final Logger LOG = LoggerFactory.getLogger(WebSocketServer.class);
 
-    /**
-     * 每个客户端一个token
-     */
-    private String token = "";
+	private static final Logger LOG = LoggerFactory.getLogger(WebSocketServer.class);
 
-    private static HashMap<String, Session> map = new HashMap<>();
+	private static ConcurrentMap<String,Session> sessionPool = new ConcurrentHashMap<>();
+	private static ConcurrentMap<String,String> sessionIds = new ConcurrentHashMap<>();
 
-    /**
-     * 连接成功
-     */
-    @OnOpen
-    public void onOpen(Session session, @PathParam("token") String token) {
-        map.put(token, session);
-        this.token = token;
-        LOG.info("有新连接：token：{}，session id：{}，当前连接数：{}", token, session.getId(), map.size());
-    }
+	@OnOpen
+	public void open(Session session,@PathParam(value="token") String token){
+		log.info("client【{}】连接成功",token);
+		sessionPool.put(token, session);
+		sessionIds.put(session.getId(), token);
+	}
 
-    /**
-     * 连接关闭
-     */
-    @OnClose
-    public void onClose(Session session) {
-        map.remove(this.token);
-        LOG.info("连接关闭，token：{}，session id：{}！当前连接数：{}", this.token, session.getId(), map.size());
-    }
+	/**
+	 * 连接关闭触发
+	 */
+	@OnClose
+	public void onClose(Session session,@PathParam String token){
+		sessionPool.remove(sessionIds.get(session.getId()));
+		sessionIds.remove(session.getId());
+		log.info("client【{}】断开连接",token);
+	}
 
-    /**
-     * 收到消息
-     */
-    @OnMessage
-    public void onMessage(String message, Session session) {
-        LOG.info("收到消息：{}，内容：{}", token, message);
-    }
 
-    /**
-     * 连接错误
-     */
-    @OnError
-    public void onError(Session session, Throwable error) {
-        LOG.error("发生错误", error);
-    }
+//	/**
+//	 * 收到信息时触发
+//	 * @param message
+//	 */
+//	@OnMessage
+//	public void onMessage(Session session,String message){
+//		String msg = String.format("%s  <-- %s",sessionIds.get(session.getId()),message);
+//		sendMessage(msg,ADMIN);
+//		log.info("client {} send to ADMIN  message : {} ",sessionIds.get(session.getId()),message);
+//	}
 
-    /**
-     * 群发消息
-     */
-    public void sendInfo(String type, String message) {
-        JSONObject json = new JSONObject();
-        json.put("type", type); // 消息类型
-        json.put("content", message); // 消息内容
 
-        for (String token : map.keySet()) {
-            Session session = map.get(token);
-            try {
-                session.getBasicRemote().sendText(json.toString());
-            } catch (IOException e) {
-                LOG.error("推送消息失败：{}，内容：{}", token, json.toString());
-            }
-        }
-    }
+	/**
+	 * 群发消息
+	 */
+	public void sendInfo(String type, String message) {
+		JSONObject json = new JSONObject();
+		json.put("type", type); // 消息类型
+		json.put("content", message); // 消息内容
 
+		for (String token : sessionPool.keySet()) {
+			Session session = sessionPool.get(token);
+			session.sendText(json.toString());
+		}
+	}
 
 }

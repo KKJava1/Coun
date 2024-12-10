@@ -14,8 +14,7 @@ public class WsService {
     public WebSocketServer webSocketServer;
 
     @Async
-    public void sendInfo(String message, String logId) {
-        MDC.put("LOG_ID", logId);
+    public void sendInfo(String message) {
         webSocketServer.sendInfo("vote_type",message);
     }
 

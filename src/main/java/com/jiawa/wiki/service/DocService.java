@@ -14,6 +14,9 @@ import com.jiawa.wiki.req.DocQueryReq;
 import com.jiawa.wiki.req.DocSaveReq;
 import com.jiawa.wiki.resp.DocQueryResp;
 import com.jiawa.wiki.resp.PageResp;
+import com.jiawa.wiki.task.ExecuteQueueTaskService;
+import com.jiawa.wiki.task.QueueTask;
+import com.jiawa.wiki.task.QueueTaskService;
 import com.jiawa.wiki.util.CopyUtil;
 import com.jiawa.wiki.util.RedisUtil;
 import com.jiawa.wiki.util.RequestContext;
@@ -27,6 +30,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -52,6 +56,8 @@ public class DocService {
     @Resource
     public WsService wsService;
 
+    @Autowired
+    private QueueTaskService queueTaskService;
 //     @Autowired
 //     private RocketMQTemplate rocketMQTemplate;
 
@@ -151,7 +157,10 @@ public class DocService {
             // 推送消息
             Doc docDb = docMapper.selectByPrimaryKey(id);
             String logId = MDC.get("LOG_ID");
-            wsService.sendInfo("【" + docDb.getName() + "】被点赞！", logId);
+
+            QueueTask queueTask = new QueueTask(ExecuteQueueTaskService.TASK_01, docDb.getName(), LocalDateTime.now().plusSeconds(5L));
+            queueTaskService.addTaskWithDelay(queueTask, 5L);
+//            wsService.sendInfo("【" + docDb.getName() + "】被点赞！", logId);
 //             rocketMQTemplate.convertAndSend("VOTE_TOPIC", "【" + docDb.getName() + "】被点赞！");
         }
 

@@ -60,7 +60,7 @@
         if ('WebSocket' in window) {
           token = Tool.uuid(10);
           // 连接地址：ws://127.0.0.1:8880/ws/xxx
-          websocket = new WebSocket(process.env.VUE_APP_WS_SERVER + '/ws/' + token);
+          websocket = new WebSocket('http://127.0.0.1:8086' + '/ws/' + token);
           initWebSocket()
 
           // 关闭
